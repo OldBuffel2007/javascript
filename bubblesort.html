@@ -1,1 +1,50 @@
+<html>
 
+<head>
+
+</head>
+
+<body>
+
+<script>
+
+    var zoekGetal, i;
+    var aantal;
+
+    window.alert("Hoeveel getallen wilt u aanvragen?");
+    aantal = Number(window.prompt('Enter a value for aantal'));
+    var getallenRij = new Array(aantal);
+
+    for (i = 0; i <= aantal - 1; i++) {
+        getallenRij[i] = Math.floor(Math.random() * 100);
+    }
+    var opslag;
+    var teller;
+
+    // deze loop gaat door totdat alles op volgorde staat
+    for (teller = 1; teller <= aantal; teller++) {
+        for (i = 0; i <= aantal - 2; i++) {
+            if (getallenRij[i] > getallenRij[i + 1]) {
+
+                // hier worden de getallen omgewisseld als dat moet
+                opslag = getallenRij[i];
+                getallenRij[i] = getallenRij[i + 1];
+                getallenRij[i + 1] = opslag;
+            }
+        }
+    }
+    teller = 0;
+    for (teller = 0; teller <= aantal - 1; teller++) {
+        window.alert(getallenRij[teller]);
+    }
+    window.alert("Het programma heeft nu alle getallen gesorteerd.");
+    window.alert("Fijne dag verder!");
+
+
+
+</script>
+
+</body>
+
+
+</html>
